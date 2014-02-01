@@ -3,7 +3,7 @@ python-dbushelpers
 
 Helpers to reduce boilerplate with python-DBUS services, uses YAML for config
 
-Forked from https://github.com/HelsinkiHacklab/reactor
+Forked from <https://github.com/HelsinkiHacklab/reactor>
 
 ## Requirements
 
