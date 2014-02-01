@@ -1,11 +1,12 @@
 import sys,os
 from baseclass import *
-
+import dbus
+import gobject
+import dbus.mainloop.glib
 
 def main(launcherclass, **kwargs):
     """Boilerplate main program check, .launcher will be added to the interface by the baseclass and path generated from the interface"""
     # Enable threading using glib mainloop
-    import dbus,gobject,dbus.mainloop.glib
     gobject.threads_init()
     dbus.mainloop.glib.threads_init()
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
