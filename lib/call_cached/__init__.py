@@ -8,7 +8,7 @@ bus = dbus.SessionBus()
 def call_cached(buspath, method, *args, **kwargs):
     """Maintains a cache of DBUS proxy objects and calls the given objects method. If the proxy object is stale tries to refresh"""
     if not kwargs.has_key('busname'):
-        kwargs['busname'] = buspath.replace('/', '.')[1:]
+        kwargs['busname'] = str(buspath[1:]).replace('/', '.')
     busname = kwargs['busname']
     obj_cache_key = "%s@%s" % (busname, buspath)
     method_cache_key = "%s::%s" % (obj_cache_key, method)
@@ -32,4 +32,4 @@ def call_cached(buspath, method, *args, **kwargs):
         del(dbus_cache[obj_cache_key])
         del(dbus_cache[method_cache_key])
         if dbus_cache_error_count[method_cache_key] < 4:
-            return call_cached(busname, buspath, method, *args)
+            return call_cached(buspath, method, *args, busname=busname)
