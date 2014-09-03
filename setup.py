@@ -12,8 +12,9 @@ setup(
     license='GNU LGPL',
     long_description=open('README.md').read(),
     install_requires=[
-        'dbus-python>=1.0', # You will most likely need this from the distro packages
+#        'dbus-python>=1.0', # You will most likely need this from the distro packages
         'PyGObject>=2.0', # You will most likely need this from the distro packages
+        'PyYAML>=3.0', # This will be more performant if you install distro package compiled against libyaml
     ],
     url='https://github.com/rambo/python-dbushelpers',
 )
