@@ -11,6 +11,7 @@ setup(
     packages=['dbushelpers',],
     license='GNU LGPL',
     long_description=open('README.md').read(),
+    description='Helpers to wrap some of the boilerplate for creating DBUS enabled services in Python',
     install_requires=[
 #        'dbus-python>=1.0', # You will most likely need this from the distro packages
         'PyGObject>=2.0', # You will most likely need this from the distro packages
